@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function LoginForm({ login }) {
   const [username, setUsername] = useState('');
@@ -32,8 +33,10 @@ function LoginForm({ login }) {
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
+
         <button>Login</button>
       </form>
+      <Link to="/userslist">to users</Link>
     </div>
   );
 }
@@ -41,7 +44,7 @@ function LoginForm({ login }) {
 export default function Login() {
   const login = creds => {
     axios
-      .post('endpoint', creds)
+      .post('https://users-app1.herokuapp.com/api/login', creds)
       .then(res => {
         console.log(res);
       })

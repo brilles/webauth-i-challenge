@@ -13,7 +13,7 @@ export default function App() {
         <div className="body">
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
-          {/* <PrivateRoute exact path="/userlist" component={UserList} /> */}
+          <Route exact path="/userslist" component={UserList} />
         </div>
       </div>
     </Router>
