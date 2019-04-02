@@ -10,6 +10,7 @@ module.exports = {
     secure: false,
     httpOnly: true
   },
+  proxy: true,
   resave: false,
   saveUninitialized: false,
   store: new KnexSessionStore({

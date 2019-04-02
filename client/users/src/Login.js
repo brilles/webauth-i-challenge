@@ -43,6 +43,7 @@ function LoginForm({ login }) {
 
 export default function Login() {
   const login = creds => {
+    console.log(creds);
     axios
       .post('https://users-app1.herokuapp.com/api/login', creds)
       .then(res => {
