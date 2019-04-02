@@ -2,9 +2,8 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 
+const authRouter = require('../auth/auth-router.js');
 const usersRouter = require('../users/users-router.js');
-const registerRouter = require('../register/register-router.js');
-const loginRouter = require('../login/login-router.js');
 
 const server = express();
 
@@ -16,8 +15,7 @@ server.get('/', (req, res) => {
   res.send('working');
 });
 
+server.use('/api', authRouter);
 server.use('/api/users', usersRouter);
-server.use('/api/register', registerRouter);
-server.use('/api/login', loginRouter);
 
 module.exports = server;
