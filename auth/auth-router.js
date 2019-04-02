@@ -20,9 +20,12 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
+
   try {
     const user = await Users.findUser({ username });
+
     if (user && bcrypt.compareSync(password, user.password)) {
+      req.session.user = user;
       res.status(200).json({ message: 'Logged in' });
     } else {
       res.status(401).json({ message: 'You shall not pass!' });
