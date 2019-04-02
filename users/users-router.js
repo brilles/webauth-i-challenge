@@ -7,7 +7,7 @@ const restrictedLogin = require('../auth/restricted-middleware.js');
 router.get('/', restrictedLogin, async (req, res) => {
   try {
     const users = await Users.getUsers();
-    res.status(200).json(users);
+    res.status(200).json(users.map(user => user.username));
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: 'Error retrieving users.' });
