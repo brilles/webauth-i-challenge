@@ -1,28 +1,21 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Login from './Login.js';
+import Register from './Register.js';
+import UserList from './users/UserList.js';
+
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+export default function App() {
+  return (
+    <Router>
+      <div className="app">
+        <div className="body">
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+          {/* <PrivateRoute exact path="/userlist" component={UserList} /> */}
+        </div>
       </div>
-    );
-  }
+    </Router>
+  );
 }
-
-export default App;
