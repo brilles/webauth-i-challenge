@@ -5,7 +5,6 @@ const configuredKnex = require('../database/dbConfig.js');
 module.exports = {
   name: 'a',
   secret: 'c',
-  proxy: true,
   cookie: {
     maxAge: 1000 * 60 * 10,
     secure: false,
