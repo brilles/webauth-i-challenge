@@ -15,7 +15,7 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors());
 server.use(session(sessionConfig));
-server.set('trust proxy', 1);
+server.enable('trust proxy');
 
 server.get('/', (req, res) => {
   res.send('working');
