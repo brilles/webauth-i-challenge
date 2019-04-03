@@ -10,9 +10,9 @@ module.exports = {
     secure: false,
     httpOnly: true
   },
-  proxy: true,
   resave: false,
   saveUninitialized: false,
+  proxy: true,
   store: new KnexSessionStore({
     knex: configuredKnex,
     tablename: 'sessions',

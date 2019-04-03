@@ -40,8 +40,9 @@ function RegisterForm({ register }) {
 
 export default function Register() {
   const register = creds => {
+    console.log(creds);
     axios
-      .post('endpoint reg', creds)
+      .post('https://users-app1.herokuapp.com/api/register', creds)
       .then(res => {
         console.log(res);
       })
